@@ -1,0 +1,16 @@
+[setup]
+vm1 ansible_host=192.168.200.142
+
+[shutdown]
+vm1 
+
+
+[masterssh]
+localmachine  short_name=localhost ansible_connection=local ansible_python_interpreter=/usr/bin/python3
+
+[shutdown:vars]
+ansible_ssh_private_key_file={{playbook_dir}}/files/ssh/id_rsa
+
+
+[mirror]
+localhost

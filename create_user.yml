@@ -1,0 +1,6 @@
+---
+- hosts: setup
+  remote_user: root
+  roles: 
+    - createuser
+...

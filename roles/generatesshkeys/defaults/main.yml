@@ -1,0 +1,3 @@
+---
+ssh_dir: "{{playbook_dir}}/files/ssh"
+...

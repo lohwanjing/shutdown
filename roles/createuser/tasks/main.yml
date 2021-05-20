@@ -1,0 +1,26 @@
+---
+- block:
+  - name: Add a new user named devops
+    user:
+      name: "{{username}}"
+ 
+  - name: Deploy SSH Key
+    authorized_key: 
+      user: "{{username}}"
+      key: "{{ lookup('file', playbook_dir + '/files/ssh/id_rsa.pub') }}"
+      state: present
+                     
+  - name: restart sshd
+    service:
+      name: sshd
+      state: restarted
+
+  - name: Add devops user to the sudoers
+    template:
+     src: "{{role_path}}/templates/sudoers.j2"
+     dest: "/etc/sudoers.d/{{username}}"
+     validate: 'visudo -cf %s'
+     mode: 0440
+  become: yes
+  become_user: root
+...

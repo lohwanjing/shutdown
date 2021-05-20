@@ -1,0 +1,12 @@
+---
+- block:
+  - name: check os
+    debug:
+      msg: "{{ansible_facts['os_family']}}"
+  - name: check user
+    shell:
+      cmd: 'whoami'
+  - name: Delay shutting down the remote node
+    shell:
+      cmd: 'sudo shutdown'
+...

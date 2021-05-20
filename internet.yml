@@ -1,0 +1,5 @@
+---
+- hosts: internet
+  roles: 
+    - okdinternetmirror
+...

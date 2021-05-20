@@ -1,0 +1,11 @@
+---
+okd_mirror_env:
+  OCP_RELEASE: 4.7.0-0.okd-2021-03-28-152009
+  LOCAL_REGISTRY: "{{cots_registry}}"
+  LOCAL_REPOSITORY: "{{openshift_repo}}"
+  PRODUCT_REPO: 'openshift'
+  RELEASE_NAME: "okd"
+  LOCAL_SECRET_JSON: '{{okd_working_dir}}/pull-secret.json'
+  ARCHITECTURE: x86_64
+  REMOVABLE_MEDIA_PATH: '{{okd_mirror_dir}}'
+...

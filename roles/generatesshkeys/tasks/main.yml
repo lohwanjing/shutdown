@@ -1,0 +1,10 @@
+---
+- block:
+  - name: create working folder
+    file:
+      path: "{{ssh_dir}}"
+      state: directory
+  - name: Generate an OpenSSH keypair with the default values (4096 bits, rsa)
+    openssh_keypair:
+      path: "{{ssh_dir}}/id_rsa"
+...

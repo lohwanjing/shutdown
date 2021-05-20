@@ -1,0 +1,6 @@
+---
+- hosts: shutdown
+  remote_user: devops
+  roles: 
+    - shutdown
+...
